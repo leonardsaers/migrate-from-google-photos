@@ -14,7 +14,7 @@ You can go through the following steps to take out your photos and videos:
 
 1. Use the self-service to request a takeout of all the content within Google Photos.
 2. Google will prepare several zip files for you to download, containing all your content within the Google Photos service. Download all takeout files to an empty folder.
-3. Use the shell script ``process_google_takeout.sh``, and provide the path to the folder used for Google takeout files as an argument.
+3. Use the shell script [process_google_takeout.sh](process_google_takeout.sh), and provide the path to the folder used for Google takeout files as an argument.
 
 ``` sh
 sh process_google_takeout.sh /home/abc/takeout/

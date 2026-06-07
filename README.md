@@ -76,19 +76,28 @@ Google Photos is deeply integrated into the phone, and you need to decide whethe
 
 The following steps describe how to disconnect Google Photos from the cloud:
 
-**Step 1:** Turn off Backup This is the most important step to break the connection between your phone and the Google cloud.
+**Step 1: Turn off Backup** 
+This is the most important step to break the connection between your phone and the Google cloud.
 1. Open the Google Photos app.
 2. Tap your profile picture in the top right corner.
 3. Select Photos settings (the gear icon).
 4. Toggle the Backup switch to OFF.
 
-**Step 2:** Free up space on the device
+**Step 2: Free up space on the device**
 1. In the Google Photos app, tap your profile picture again.
 2. Select Free up space on this device.
 
 The app will now delete the local copies it knows are already securely stored in the Google cloud. If you have migrated to JottaCloud, you also have a backup there.
 
-The next step may be to delete all pictures from Google Cloud.
+**Step 3: Disable the app entirely to prevent reminders**
+Since Google Photos is a core system app on Pixel devices, the phone will frequently prompt you with notifications to turn backup back on. You can silence the app down by disable it.
+1. Open your phone's Settings.
+2. Go to Apps > See all apps.
+3. Scroll down and select Photos (Google Photos).
+4. Tap Disable (and confirm the choice when the system warning appears).
+
+
+The next step could then be to delete all pictures from Google Cloud.
 
 
 # Disclaimer

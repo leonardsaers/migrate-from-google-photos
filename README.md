@@ -1,4 +1,4 @@
-# Migrate or localy store your photos from Google Photos
+# Migrate or locally store your photos from Google Photos
 
 Google allows you to export all files from Google Photos using the Takeout self-service tool:
 
@@ -55,7 +55,7 @@ sh migrate_to_jotta.sh
 
 ### The file structure
 
-All files will be uploaded to your jotta Archive in a folder called 'Google-Photos' and then separated in a year and mounth structure.
+All files will be uploaded to your jotta Archive in a folder called 'Google-Photos' and then separated in a year and month structure.
 
 ```text
 Archive/
@@ -72,7 +72,7 @@ Archive/
 
 ## Prepare the phone for JottaCloud
 
-Google Photos is deeply integrated into the phone, and you need to decide whether to disable the app entirely or just disconnect it from the cloud. Afterward, you will use Jotta Cloud for cloud storage, while Google Photos could still be available with its non-cloud features.
+Google Photos is deeply integrated into the phone, and you need to decide whether to disable the app entirely or just disconnect it from the cloud. Afterward, you will use Jottacloud for cloud storage, while Google Photos could still be available with its non-cloud features.
 
 The following steps describe how to disconnect Google Photos from the cloud:
 
@@ -96,11 +96,13 @@ Since Google Photos is a core system app on Pixel devices, the phone will freque
 3. Scroll down and select Photos (Google Photos).
 4. Tap Disable (and confirm the choice when the system warning appears).
 
+**Step 4: Realise the lock-in effect in (some) Android phones**
+At least on Google Pixel phones, the Google Photos app is the only app allowed to change the background on the phone.
 
 The next step could then be to delete all pictures from Google Cloud.
 
 
-# Disclaimer
+## Disclaimer
 
 This script and instruction are provided "as is" without any warranties. The user is responsible for backing up all data before running the script. The creator of this script is not liable for any data loss or damages that may occur from using the script. Use at your own risk.
 

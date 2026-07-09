@@ -35,14 +35,14 @@ Files that end up in the `error` folder will **not** be assigned corrected metad
 
 Visit [Google Photos Migrate](https://github.com/garzj/google-photos-migrate) and read their prerequisites.
 
-# Migrate to Jotta cloud
+# Migrate to Jottacloud
 
-This next part will let you migrate to [Jotta Cloud](https://jottacloud.com/)
+This next part will let you migrate to [Jottacloud](https://jottacloud.com/)
 
 ## Preparation
 
-1. Set up your account on jotta cloud
-2. Search the website for jotta cloud for the "command line tool" instructions and setup the command line tool.
+1. Set up your account on jottacloud
+2. Search the website for jottacloud for the "command line tool" instructions and setup the command line tool.
 3. Follow the jotta cloud instruction for logging in to the command line tool.
 
 ## Migrate to Jotta
@@ -70,7 +70,7 @@ Archive/
              └── PXL_20220101_115300076.jpg
 ```
 
-## Prepare the phone for JottaCloud
+## Prepare the phone for Jottacloud
 
 Google Photos is deeply integrated into the phone, and you need to decide whether to disable the app entirely or just disconnect it from the cloud. Afterward, you will use Jottacloud for cloud storage, while Google Photos could still be available with its non-cloud features.
 
@@ -87,7 +87,7 @@ This is the most important step to break the connection between your phone and t
 1. In the Google Photos app, tap your profile picture again.
 2. Select Free up space on this device.
 
-The app will now delete the local copies it knows are already securely stored in the Google cloud. If you have migrated to JottaCloud, you also have a backup there.
+The app will now delete the local copies it knows are already securely stored in the Google cloud. If you have migrated to Jottacloud, you also have a backup there.
 
 **Step 3: Disable the app entirely to prevent reminders**
 Since Google Photos is a core system app on Pixel devices, the phone will frequently prompt you with notifications to turn backup back on. You can silence the app down by disable it.

@@ -13,7 +13,7 @@ The self-service is accessible and easy to use for downloading all your photos, 
 You can go through the following steps to take out your photos and videos:
 
 1. Use the self-service to request a takeout of all the content within Google Photos.
-2. Google will prepare several zip files for you to download, containing all your content within the Google Photos service. Download all takeout files to the [takeout](./takeout/) inside this project's directory. **Note:** It is important that *all* zip files from the export are placed in this folder before proceeding, as Google randomly distributes photos and their associated metadata (JSON files) across different zip files.
+2. Google will prepare several zip files for you to download, containing all your content within the Google Photos service. Download all takeout files to the [takeout](./takeout/) inside this project's directory. **Note:** It is important that *all* zip files from the export are placed in the folder ./takeout before proceeding, as Google randomly distributes photos and their associated metadata (JSON files) across different zip files.
 3. Use the shell script `process_google_takeout.sh`, and provide the path to the `takeout` folder as an argument.
 
 ```sh

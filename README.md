@@ -55,19 +55,32 @@ sh migrate_to_jotta.sh
 
 ### The file structure
 
-All files will be uploaded to your jotta Archive in a folder called 'Google-Photos' and then separated in a year and month structure.
+All files will be uploaded to your Jottacloud **Archive** in a folder called `Google-Photos`, organized by year and month:
 
 ```text
 Archive/
  └── Google-Photos/
      ├── 2021/
-     │   ├── 11/
      │   └── 12/
      │       ├── IMG_20211231_102630_222.jpg
      │       └── PXL_20211231_183300326.mp4
      └── 2022/
          └── 01/
              └── PXL_20220101_115300076.jpg
+```
+
+If you already have the Jottacloud app installed on a mobile device, it will automatically upload all new images to the **Backup** section. If an image is uploaded to the Backup section and the exact same image is included in your Google Photos export, duplicate files will be created in your account. This script is (for now) designed to do the migration before you start using the Jottacloud app.
+
+```text
+Backup/
+ └── Photo Timeline Uploads/
+     └── 2021/
+         ├── 11/
+             ├── 01/
+             │   ├── IMG_20211231_102630_222.jpg
+             │   └── ...
+             └── 02/
+                 └──PXL_20211231_183300326.mp4
 ```
 
 ## Prepare the phone for Jottacloud

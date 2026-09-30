@@ -1,0 +1,31 @@
+<!--
+  Example of an xml structure described by this dtd.
+
+<jottacloud>
+  <photos>
+    <year value="2016">
+        <month value="1">
+          <file name="PXL_20260530_110757553.jpg" path="/Jottacloud/Backup/Photo Timeline Uploads/PXL_20260530_110757553.jpg" />
+        </month>
+    </year>
+  </photos>
+  <google-photos>
+    <year value="2016">
+        <month value="1">
+          <file name="PXL_20260530_110757553.jpg" path="/Jottacloud/Backup/Photo Timeline Uploads/PXL_20260530_110757553.jpg" />
+        </month>
+    </year>
+  </google-photos>
+</jottacloud>
+-->
+<!ELEMENT jottacloud (photos, google-photos)>
+<!ELEMENT photos (year*)>
+<!ELEMENT google-photos (year*)>
+<!ELEMENT year (month*)>
+<!ATTLIST year value CDATA #REQUIRED>
+<!ELEMENT month (file*)>
+<!ATTLIST month value CDATA #REQUIRED>
+<!ELEMENT file EMPTY>
+<!ATTLIST file
+          name CDATA #REQUIRED
+          path CDATA #REQUIRED>

@@ -1,6 +1,41 @@
+# Migrate from Google Photo
+
+Google Photos seems to be a great tool for uploading images and sharing them with others. Unfortunately, beneath this attractive surface lies a lock-in effect that becomes apparent when you try to export all your photos to your local hard drive or another photo service.
+
+Google provides the Takeout tool to export all photos so they can be stored locally. However, the format of the export is far from what would be considered usable, as each image is split into two separate files: one image file and one metadata file.
+
+This project provides a guide on how to overcome this lock-in effect.
+
+
+```mermaid
+flowchart LR
+    classDef source fill:#2e7d32,stroke:#1b5e20,color:#fff,stroke-width:2px;
+    classDef sink fill:#4a148c,stroke:#311b92,color:#fff,stroke-width:2px;
+
+    A([📤: Google Takeout]):::source --> B[Merge Metadata]
+    
+    B --> C([📥You have the Local copy of all your Google Photos data]):::sink
+    
+    B --> J1[Migrate to Jottacloud]
+    B --> E([📥Migrate to other services]):::sink
+    
+    J1 --> J3[Handle duplicates]
+    
+    J3 --> J4([📥: You have migrated to Jottacloud]):::sink
+
+    click J1 "/migrate-to-jottacloud/README.md" "Go to Jottacloud migration guide"
+```
+[Instructions how to migrate to JottaCloud](/migrate-to-jottacloud/README.md).
+
 # Migrate or locally store your photos from Google Photos
 
-Google allows you to export all files from Google Photos using the Takeout self-service tool:
+## Prerequisites
+
+Visit [Google Photos Migrate](https://github.com/garzj/google-photos-migrate) and read their prerequisites.
+
+## Merge metadata files
+
+Start by using the Takeout self-service tool:
 
 [Google Takeout](https://takeout.google.com/)
 
@@ -31,91 +66,9 @@ During the migration of metadata, some files might be placed in the `error` fold
 
 Files that end up in the `error` folder will **not** be assigned corrected metadata and will **not** be included in the final upload to Jottacloud by the migration script. The original still images for these files are typically successfully processed and placed in the `output` folder.
 
-## Prerequisites
 
-Visit [Google Photos Migrate](https://github.com/garzj/google-photos-migrate) and read their prerequisites.
-
-# Migrate to Jottacloud
-
-This next part will let you migrate to [Jottacloud](https://jottacloud.com/)
-
-## Preparation
-
-1. Set up your account on jottacloud
-2. Search the website for jottacloud for the "command line tool" instructions and setup the command line tool.
-3. Follow the jotta cloud instruction for logging in to the command line tool.
-
-## Migrate to Jotta
-
-Use the shell script `migrate_to_jotta.sh` to migrate all files to jotta.
-
-```sh
-sh migrate_to_jotta.sh
-```
-
-### The file structure
-
-All files will be uploaded to your Jottacloud **Archive** in a folder called `Google-Photos`, organized by year and month:
-
-```text
-Archive/
- └── Google-Photos/
-     ├── 2021/
-     │   └── 12/
-     │       ├── IMG_20211231_102630_222.jpg
-     │       └── PXL_20211231_183300326.mp4
-     └── 2022/
-         └── 01/
-             └── PXL_20220101_115300076.jpg
-```
-
-If you already have the Jottacloud app installed on a mobile device, it will automatically upload all new images to the **Backup** section. If an image is uploaded to the Backup section and the exact same image is included in your Google Photos export, duplicate files will be created in your account. This script is (for now) designed to do the migration before you start using the Jottacloud app.
-
-```text
-Backup/
- └── Photo Timeline Uploads/
-     └── 2021/
-         ├── 11/
-             ├── 01/
-             │   ├── IMG_20211231_102630_222.jpg
-             │   └── ...
-             └── 02/
-                 └──PXL_20211231_183300326.mp4
-```
-
-## Prepare the phone for Jottacloud
-
-Google Photos is deeply integrated into the phone, and you need to decide whether to disable the app entirely or just disconnect it from the cloud. Afterward, you will use Jottacloud for cloud storage, while Google Photos could still be available with its non-cloud features.
-
-The following steps describe how to disconnect Google Photos from the cloud:
-
-**Step 1: Turn off Backup** 
-This is the most important step to break the connection between your phone and the Google cloud.
-1. Open the Google Photos app.
-2. Tap your profile picture in the top right corner.
-3. Select Photos settings (the gear icon).
-4. Toggle the Backup switch to OFF.
-
-**Step 2: Free up space on the device**
-1. In the Google Photos app, tap your profile picture again.
-2. Select Free up space on this device.
-
-The app will now delete the local copies it knows are already securely stored in the Google cloud. If you have migrated to Jottacloud, you also have a backup there.
-
-**Step 3: Disable the app entirely to prevent reminders**
-Since Google Photos is a core system app on Pixel devices, the phone will frequently prompt you with notifications to turn backup back on. You can silence the app down by disable it.
-1. Open your phone's Settings.
-2. Go to Apps > See all apps.
-3. Scroll down and select Photos (Google Photos).
-4. Tap Disable (and confirm the choice when the system warning appears).
-
-**Step 4: Realise the lock-in effect in (some) Android phones**
-At least on Google Pixel phones, the Google Photos app is the only app allowed to change the background on the phone.
-
-The next step could then be to delete all pictures from Google Cloud.
 
 
 ## Disclaimer
 
-This script and instruction are provided "as is" without any warranties. The user is responsible for backing up all data before running the script. The creator of this script is not liable for any data loss or damages that may occur from using the script. Use at your own risk.
-
+These scripts and instructions are provided "as is" without warranty of any kind. Users are strongly advised to verify backups before deleting any data. The author assumes no liability for data loss or damages resulting from the use of these tools. Use at your own risk.
